@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: maovzt12f-nodejs-gitops
+  description: This is GitOps manifest for maovzt12f-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=maovzt12f-nodejs
+    backstage.io/kubernetes-id: maovzt12f-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: maovzt12f-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:maovzt12f-nodejs
